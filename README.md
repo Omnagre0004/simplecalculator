@@ -1,2 +1,36 @@
-# simplecalculator
-This C++ program is designed to perform basic arithmetic operations like addition, subtraction, multiplication, and division. The user can input two numbers and choose the operation they want to perform. The program then calculates the result and displays it to the user.
+#include <iostream>
+using namespace std;
+
+int main() {
+    char op;
+    double num1, num2;
+
+    cout << "Enter operator (+, -, *, /): ";
+    cin >> op;
+
+    cout << "Enter two numbers: ";
+    cin >> num1 >> num2;
+
+    switch(op) {
+        case '+':
+            cout << "Result: " << num1 + num2;
+            break;
+        case '-':
+            cout << "Result: " << num1 - num2;
+            break;
+        case '*':
+            cout << "Result: " << num1 * num2;
+            break;
+        case '/':
+            if (num2 != 0)
+                cout << "Result: " << num1 / num2;
+            else
+                cout << "Error! Division by zero is not allowed.";
+            break;
+        default:
+            cout << "Error! Invalid operator";
+            break;
+    }
+
+    return 0;
+}
